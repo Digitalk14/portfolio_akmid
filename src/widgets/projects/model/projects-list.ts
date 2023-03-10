@@ -1,4 +1,14 @@
-export const PROJECTS_LIST = [
+interface IPROJECTS_LISTProps {
+    imgUrl: string;
+    title: {
+        name: string;
+        role: string;
+        website: string;
+    }
+    description: string;
+}
+
+export const PROJECTS_LIST: IPROJECTS_LISTProps[] = [
     {
         imgUrl: '/assets/images/projects/indrive.jpg',
         title: {

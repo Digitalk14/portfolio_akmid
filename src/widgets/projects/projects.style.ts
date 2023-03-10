@@ -12,11 +12,14 @@ export const Content = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
+  position: relative;
 `;
 export const ImageWrapper = styled.div`
   position: relative;
-  width: 60%;
+  width: 100%;
   height: 330px;
+  border-radius: 16px;
+  overflow: hidden;
 `;
 export const TextWrapper = styled.div`
   width: 100%;
@@ -45,10 +48,53 @@ export const ProjectsWrapper = styled.div`
     cursor: pointer;
   }
   a {
-    margin: 0 0 20px;
+    margin: 5px 0 20px;
   }
 `;
 
 export const boldStyle = css`
   font-weight: 600;
+  transition: all 300 ease-out;
+`;
+
+interface IProjectDescriptionWrapperProps {
+  isActive: boolean;
+}
+
+export const ProjectDescriptionWrapper = styled.div<IProjectDescriptionWrapperProps>`
+  height: ${({ isActive }) => (isActive ? "50px" : "0")};
+  overflow: hidden;
+  transition: height 300ms ease-out;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+`;
+
+export const ProjectsToggle = styled.button`
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  a,
+  p {
+    text-align: left;
+  }
+`;
+
+interface IProjectPhotoWrapperProps {
+  isActive: boolean;
+}
+
+export const ProjectPhotoWrapper = styled.div<IProjectPhotoWrapperProps>`
+  position: absolute;
+  width: 100%;
+  opacity: ${({ isActive }) => (isActive ? "1" : "0")};
+  transition: all 300ms ease-out;
+`;
+export const PhotoWrapper = styled.div`
+  width: 60%;
+  position: relative;
+  height: 330px;
 `;

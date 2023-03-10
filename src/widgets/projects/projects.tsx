@@ -1,5 +1,12 @@
-import React, { useState } from "react";
-import { Wrapper, Content, ProjectsWrapper, boldStyle } from "./projects.style";
+import React, { useCallback, useState, useRef } from "react";
+import {
+  Wrapper,
+  Content,
+  ProjectsWrapper,
+  boldStyle,
+  ProjectDescriptionWrapper,
+  ProjectsToggle,
+} from "./projects.style";
 import { PROJECTS_LIST } from "./model";
 import { ProjectsPhoto } from "./projects-photo";
 
@@ -7,6 +14,9 @@ interface IProjectsProps {}
 
 export const Projects: React.FC<IProjectsProps> = ({}) => {
   const [projectId, setProjectId] = useState<number>(0);
+  const handleProjectsId = useCallback((id: number) => {
+    setProjectId(id);
+  }, []);
   return (
     <Wrapper>
       <h3>My projects</h3>
@@ -16,18 +26,20 @@ export const Projects: React.FC<IProjectsProps> = ({}) => {
           {PROJECTS_LIST.map(({ title }, index) => {
             const { name, role, website } = title;
             return (
-              <React.Fragment key={name}>
+              <ProjectsToggle
+                key={name}
+                onClick={() => handleProjectsId(index)}
+              >
                 <p
                   className={boldStyle}
-                  style={{
-                    textDecoration: index === projectId ? "underline" : "none",
-                  }}
                 >
                   {name}
                 </p>
-                <p>{role}</p>
-                <a href={website}>Website</a>
-              </React.Fragment>
+                <ProjectDescriptionWrapper isActive={index === projectId}>
+                  <p>{role}</p>
+                  <a href={website}>Website</a>
+                </ProjectDescriptionWrapper>
+              </ProjectsToggle>
             );
           })}
         </ProjectsWrapper>
