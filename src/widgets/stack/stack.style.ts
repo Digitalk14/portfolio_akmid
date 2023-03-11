@@ -16,7 +16,8 @@ export const Content = styled.div`
 export const ToolWrapper = styled.div`
   display: flex;
   align-items: center;
+  margin: 3px 0;
   p{
-    margin: 0 10px 7px 0;
+    margin: 0 10px 0;
   }
 `;
