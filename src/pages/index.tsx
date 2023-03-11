@@ -1,8 +1,16 @@
+import { useEffect, useState } from "react";
 import Head from "next/head";
 import { Main, Cover, Projects, Stack, Networks } from "~/widgets";
 import { TextWrapper } from "~/shared";
+import { useMobileDetection } from "~/features";
 
 export default function Home() {
+  const [isMobile, setIsMobile] = useState<"loading" | boolean>("loading");
+  useEffect(() => {
+    useMobileDetection().then(res=>{
+      setIsMobile(res)
+    })
+  }, []);
   return (
     <>
       <Head>
@@ -18,15 +26,21 @@ export default function Home() {
         />
       </Head>
       <Main>
-        <Cover />
-        <TextWrapper>
-          {`Hi, I’m Dmitrii and I create web user interfaces more than 4 years.\n
+        {isMobile === "loading" ? (
+          <div>Loading</div>
+        ) : (
+          <>
+            <Cover isMobile={isMobile}/>
+            <TextWrapper>
+              {`Hi, I’m Dmitrii and I create web user interfaces more than 4 years.\n
 I enjoy my job and infinitely improve my skills.\n
 Actually, that’s why I chose this profession, cause there are lot of things to learn about`}
-        </TextWrapper>
-        <Projects />
-        <Stack />
-        <Networks />
+            </TextWrapper>
+            <Projects />
+            <Stack />
+            <Networks />
+          </>
+        )}
       </Main>
     </>
   );
