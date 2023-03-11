@@ -15,7 +15,6 @@ interface IProjectsPhotoProps {
 }
 
 export const ProjectsPhoto: React.FC<IProjectsPhotoProps> = ({ id }) => {
-  const isProduction = process.env.NODE_ENV === "production";
   let currentId: number;
   const [isActive, setActive] = useState(false);
   useEffect(() => {
@@ -30,7 +29,7 @@ export const ProjectsPhoto: React.FC<IProjectsPhotoProps> = ({ id }) => {
         <ProjectPhotoWrapper key={description} isActive={index === id}>
           <ImageWrapper>
             <Image
-              src={`${isProduction ? "portfolio_akmid" : ""}${imgUrl}`}
+              src={imgUrl}
               fill
               alt={"picture of project"}
               style={{
