@@ -6,11 +6,9 @@ import { useMobileDetection } from "~/features";
 
 export default function Home() {
   const [isMobile, setIsMobile] = useState<"loading" | boolean>("loading");
-  useEffect(() => {
-    useMobileDetection().then((res) => {
-      setIsMobile(res);
-    });
-  }, []);
+  useMobileDetection().then((res) => {
+    setIsMobile(res);
+  });
   return (
     <>
       <Head>

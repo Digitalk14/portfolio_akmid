@@ -10,28 +10,26 @@ interface INetworksProps {
 
 export const Networks: React.FC<INetworksProps> = ({ isMobile }) => {
   const [isBottom, setBottom] = useState(false);
-  const handleScroll = () => {
-    if (isMobile) {
-      setBottom(true);
-      return;
-    } else {
-      const bottomPosition = window.scrollY + window.innerHeight;
-      const documentHeight = document.body.scrollHeight;
-      if (bottomPosition + 50 > documentHeight) {
+  
+  useEffect(() => {
+    const handleScroll = () => {
+      if (isMobile) {
         setBottom(true);
         return;
       } else {
-        setBottom(false);
-        return;
+        const bottomPosition = window.scrollY + window.innerHeight;
+        const documentHeight = document.body.scrollHeight;
+        if (bottomPosition + 50 > documentHeight) {
+          setBottom(true);
+          return;
+        } else {
+          setBottom(false);
+          return;
+        }
       }
-    }
-  };
-  useEffect(() => {
+    };
     document.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [handleScroll]);
-  useEffect(() => {
-    handleScroll();
   }, []);
   return (
     <Wrapper>
