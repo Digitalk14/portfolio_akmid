@@ -12,6 +12,9 @@ export const Wrapper = styled.section`
   a {
     margin: 0 15px 0 0;
   }
+  @media (max-width: 960px) {
+    padding: 0 16px;
+  }
 `;
 
 export const Content = styled.div<IContentProps>`

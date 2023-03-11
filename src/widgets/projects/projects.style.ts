@@ -6,6 +6,11 @@ export const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   margin: 32px 0;
+  @media (max-width: 960px) {
+    h3 {
+      padding: 0 16px;
+    }
+  }
 `;
 
 export const Content = styled.div`

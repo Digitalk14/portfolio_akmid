@@ -7,9 +7,9 @@ import { useMobileDetection } from "~/features";
 export default function Home() {
   const [isMobile, setIsMobile] = useState<"loading" | boolean>("loading");
   useEffect(() => {
-    useMobileDetection().then(res=>{
-      setIsMobile(res)
-    })
+    useMobileDetection().then((res) => {
+      setIsMobile(res);
+    });
   }, []);
   return (
     <>
@@ -30,7 +30,7 @@ export default function Home() {
           <div>Loading</div>
         ) : (
           <>
-            <Cover isMobile={isMobile}/>
+            <Cover isMobile={isMobile} />
             <TextWrapper>
               {`Hi, I’m Dmitrii and I create web user interfaces more than 4 years.\n
 I enjoy my job and infinitely improve my skills.\n
@@ -38,7 +38,7 @@ Actually, that’s why I chose this profession, cause there are lot of things to
             </TextWrapper>
             <Projects />
             <Stack />
-            <Networks />
+            <Networks isMobile={isMobile} />
           </>
         )}
       </Main>

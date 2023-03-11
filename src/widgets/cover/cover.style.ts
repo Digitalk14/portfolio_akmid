@@ -5,12 +5,19 @@ export const Wrapper = styled.section`
   position: relative;
   display: flex;
   margin: 0 0 32px 0;
+  @media (max-width: 960px) {
+    flex-direction: column;
+    justify-content: flex-end;
+  }
 `;
 
 export const ImageWrapper = styled.div`
   position: relative;
   height: 600px;
   width: 70%;
+  @media (max-width: 960px) {
+    width: 100%;
+  }
 `;
 
 export const TextWrapper = styled.div`
@@ -30,6 +37,31 @@ export const TextWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
+  @media (max-width: 960px) {
+    padding: 20px 16px 0 16px;
+    width: 100%;
+    height: auto;
+    background: linear-gradient(
+      180deg,
+      #ffffff00 0,
+      #fcfcfc 20%,
+      #fcfcfc 51%,
+      #fcfcfc
+    );
+    align-items: flex-start;
+    top: auto;
+    right: auto;
+    h1,
+    h2 {
+      text-align: left;
+    }
+    h1 {
+      font-size: 36px;
+    }
+    h2 {
+      font-size: 20px;
+    }
+  }
 `;
 
 export const H1 = styled.h1`

@@ -8,7 +8,6 @@ interface ICoverProps {
 }
 
 export const Cover: React.FC<ICoverProps> = ({isMobile}) => {
-  console.log(isMobile)
   return (
     <Wrapper>
       <ImageWrapper>

@@ -4,6 +4,9 @@ export const Wrapper = styled.section`
   width: 100%;
   display: flex;
   flex-direction: column;
+  @media (max-width: 960px) {
+    padding: 0 16px;
+  }
 `;
 
 export const Content = styled.div`
@@ -18,6 +21,6 @@ export const ToolWrapper = styled.div`
   align-items: center;
   margin: 3px 0;
   p{
-    margin: 0 10px 0;
+    margin: 0 10px 0 0;
   }
 `;
