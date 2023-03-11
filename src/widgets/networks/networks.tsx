@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import { assetPrefix } from "~/shared";
 import { Content, Wrapper } from "./networks.style";
 import { NETWORKS_LIST } from "./model";
 
@@ -29,7 +30,7 @@ export const Networks: React.FC<INetworksProps> = () => {
         {NETWORKS_LIST.map(({ name, icon, link }) => (
           <a key={name} href={link} target='_blank'>
             <Image
-              src={`/assets/images/icons/${icon}`}
+              src={`${assetPrefix()}/assets/images/icons/${icon}`}
               width={30}
               height={30}
               alt={`icon of ${name}`}

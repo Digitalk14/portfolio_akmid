@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { assetPrefix } from "~/shared";
 import { Content, ToolWrapper, Wrapper } from "./stack.style";
 import { TOOLS_LIST } from "./model";
 
@@ -14,7 +15,7 @@ export const Stack: React.FC<IStackProps> = () => {
           <ToolWrapper key={name}>
             <p>{name}</p>
             <Image
-              src={`/assets/images/icons/${imgUrl}`}
+              src={`${assetPrefix()}/assets/images/icons/${imgUrl}`}
               width={15}
               height={15}
               alt={`icon of ${name}`}

@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { assetPrefix } from "~/shared";
 import { Wrapper, ImageWrapper, TextWrapper, H1 } from "./cover.style";
 
 interface ICoverProps {}
@@ -9,7 +10,7 @@ export const Cover: React.FC<ICoverProps> = () => {
     <Wrapper>
       <ImageWrapper>
         <Image
-          src='/assets/images/covers/main.jpeg'
+          src={`${assetPrefix()}/assets/images/covers/main.jpeg`}
           fill
           alt="cover"
           style={{ objectFit: "cover" }}
