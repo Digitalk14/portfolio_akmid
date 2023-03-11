@@ -3,11 +3,9 @@ import Image from "next/image";
 import { assetPrefix } from "~/shared";
 import { Wrapper, ImageWrapper, TextWrapper, H1 } from "./cover.style";
 
-interface ICoverProps {
-  isMobile: boolean;
-}
+interface ICoverProps {}
 
-export const Cover: React.FC<ICoverProps> = ({isMobile}) => {
+export const Cover: React.FC<ICoverProps> = () => {
   return (
     <Wrapper>
       <ImageWrapper>

@@ -29,4 +29,7 @@ export const Content = styled.div<IContentProps>`
   a {
     margin: ${({ isBottom }) => (isBottom ? "0 15px 0 0" : "5px")};
   }
+  @media (max-width: 960px) {
+    position: relative;
+  }
 `;

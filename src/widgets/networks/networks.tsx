@@ -4,28 +4,21 @@ import { assetPrefix } from "~/shared";
 import { Content, Wrapper } from "./networks.style";
 import { NETWORKS_LIST } from "./model";
 
-interface INetworksProps {
-  isMobile: boolean;
-}
+interface INetworksProps {}
 
-export const Networks: React.FC<INetworksProps> = ({ isMobile }) => {
+export const Networks: React.FC<INetworksProps> = () => {
   const [isBottom, setBottom] = useState(false);
-  
+
   useEffect(() => {
     const handleScroll = () => {
-      if (isMobile) {
+      const bottomPosition = window.scrollY + window.innerHeight;
+      const documentHeight = document.body.scrollHeight;
+      if (bottomPosition + 50 > documentHeight) {
         setBottom(true);
         return;
       } else {
-        const bottomPosition = window.scrollY + window.innerHeight;
-        const documentHeight = document.body.scrollHeight;
-        if (bottomPosition + 50 > documentHeight) {
-          setBottom(true);
-          return;
-        } else {
-          setBottom(false);
-          return;
-        }
+        setBottom(false);
+        return;
       }
     };
     document.addEventListener("scroll", handleScroll);
