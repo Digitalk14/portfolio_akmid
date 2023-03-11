@@ -31,7 +31,7 @@ export const TextWrapper = styled.div`
   background: linear-gradient(
     to bottom,
     #ffffff00 0%,
-    #ffffff 30%,
+    #ffffffbd 20%,
     #ffffff 51%,
     #ffffff 100%
   );

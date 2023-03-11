@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Main, Cover, Projects, Stack } from "~/widgets";
+import { Main, Cover, Projects, Stack, Networks } from "~/widgets";
 import { TextWrapper } from "~/shared";
 
 export default function Home() {
@@ -26,6 +26,7 @@ Actually, that’s why I chose this profession, cause there are lot of things to
         </TextWrapper>
         <Projects />
         <Stack />
+        <Networks />
       </Main>
     </>
   );
