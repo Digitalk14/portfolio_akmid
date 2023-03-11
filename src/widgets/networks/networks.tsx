@@ -6,6 +6,7 @@ import { NETWORKS_LIST } from "./model";
 interface INetworksProps {}
 
 export const Networks: React.FC<INetworksProps> = () => {
+    const isProduction = process.env.NODE_ENV === "production";
   const [isBottom, setBottom] = useState(false);
   const handleScroll = () => {
     const bottomPosition = window.scrollY + window.innerHeight;
@@ -29,7 +30,7 @@ export const Networks: React.FC<INetworksProps> = () => {
         {NETWORKS_LIST.map(({ name, icon, link }) => (
           <a key={name} href={link} target='_blank'>
             <Image
-              src={`/assets/images/icons/${icon}`}
+              src={`${isProduction ? 'portfolio_akmid/' : ''}/assets/images/icons/${icon}`}
               width={30}
               height={30}
               alt={`icon of ${name}`}

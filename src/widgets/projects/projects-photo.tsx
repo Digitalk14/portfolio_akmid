@@ -1,7 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { PROJECTS_LIST } from "./model";
-import { ImageWrapper, Description, TextWrapper, ProjectPhotoWrapper, PhotoWrapper } from "./projects.style";
+import {
+  ImageWrapper,
+  Description,
+  TextWrapper,
+  ProjectPhotoWrapper,
+  PhotoWrapper,
+} from "./projects.style";
 import { JsxElement } from "typescript";
 
 interface IProjectsPhotoProps {
@@ -9,7 +15,7 @@ interface IProjectsPhotoProps {
 }
 
 export const ProjectsPhoto: React.FC<IProjectsPhotoProps> = ({ id }) => {
-  const currentImage = PROJECTS_LIST[id];
+  const isProduction = process.env.NODE_ENV === "production";
   let currentId: number;
   const [isActive, setActive] = useState(false);
   useEffect(() => {
@@ -24,7 +30,7 @@ export const ProjectsPhoto: React.FC<IProjectsPhotoProps> = ({ id }) => {
         <ProjectPhotoWrapper key={description} isActive={index === id}>
           <ImageWrapper>
             <Image
-              src={imgUrl}
+              src={`${isProduction ? "portfolio_akmid" : ""}${imgUrl}`}
               fill
               alt={"picture of project"}
               style={{

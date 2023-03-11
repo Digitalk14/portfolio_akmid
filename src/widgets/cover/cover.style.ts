@@ -16,11 +16,11 @@ export const ImageWrapper = styled.div`
 export const TextWrapper = styled.div`
   width: 50%;
   background: linear-gradient(
-    to right,
-    #ffffff00 0%,
-    #ffffff 30%,
-    #ffffff 51%,
-    #ffffff 100%
+    90deg,
+    #ffffff00 0,
+    #fcfcfc 30%,
+    #fcfcfc 51%,
+    #fcfcfc
   );
   height: 600px;
   position: absolute;
