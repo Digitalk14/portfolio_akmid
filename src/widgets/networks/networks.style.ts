@@ -31,5 +31,7 @@ export const Content = styled.div<IContentProps>`
   }
   @media (max-width: 960px) {
     position: relative;
+    transition: 0;
+    transform: translateY(0);
   }
 `;
