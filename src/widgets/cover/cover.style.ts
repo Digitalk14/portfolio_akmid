@@ -23,9 +23,9 @@ export const ImageWrapper = styled.div`
 export const TextWrapper = styled.div`
   width: 50%;
   background: linear-gradient(
-    180deg,
+    90deg,
     #ffffff00 0,
-    #fcfcfcc4 20%,
+    #fcfcfc 30%,
     #fcfcfc 51%,
     #fcfcfc
   );
@@ -44,7 +44,7 @@ export const TextWrapper = styled.div`
     background: linear-gradient(
       180deg,
       #ffffff00 0,
-      #fcfcfc 20%,
+      #fcfcfcc4 20%,
       #fcfcfc 51%,
       #fcfcfc
     );

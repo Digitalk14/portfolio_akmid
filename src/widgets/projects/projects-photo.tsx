@@ -36,6 +36,7 @@ export const ProjectsPhoto: React.FC<IProjectsPhotoProps> = ({ id }) => {
                 transition: "all 300ms ease",
                 objectPosition: "top",
               }}
+              loading='lazy'
             />
 
             <TextWrapper>

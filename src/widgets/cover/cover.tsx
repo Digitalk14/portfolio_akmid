@@ -14,6 +14,8 @@ export const Cover: React.FC<ICoverProps> = () => {
           fill
           alt="cover"
           style={{ objectFit: "cover" }}
+          priority
+          quality={100}
         />
       </ImageWrapper>
       <TextWrapper>
