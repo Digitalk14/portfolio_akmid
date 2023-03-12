@@ -33,5 +33,6 @@ export const Content = styled.div<IContentProps>`
     position: relative;
     transition: 0;
     transform: translateY(0);
+    flex-direction: row;
   }
 `;

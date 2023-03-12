@@ -18,6 +18,9 @@ export const Content = styled.div`
   display: flex;
   justify-content: space-between;
   position: relative;
+  @media (max-width: 960px) {
+    flex-direction: column;
+  }
 `;
 export const ImageWrapper = styled.div`
   position: relative;
@@ -31,7 +34,7 @@ export const TextWrapper = styled.div`
   position: absolute;
   bottom: 0;
   left: 0;
-  padding: 15px;
+  padding: 25px 15px 15px 15px;
   box-sizing: border-box;
   background: linear-gradient(
     to bottom,
@@ -40,6 +43,14 @@ export const TextWrapper = styled.div`
     #ffffff 51%,
     #ffffff 100%
   );
+  p {
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    height: 50px;
+    overflow: hidden;
+  }
 `;
 
 export const Description = styled.p``;
@@ -67,7 +78,7 @@ interface IProjectDescriptionWrapperProps {
 }
 
 export const ProjectDescriptionWrapper = styled.div<IProjectDescriptionWrapperProps>`
-  height: ${({ isActive }) => (isActive ? "50px" : "0")};
+  height: ${({ isActive }) => (isActive ? "60px" : "0")};
   overflow: hidden;
   transition: height 300ms ease-out;
   display: flex;
@@ -88,11 +99,11 @@ export const ProjectsToggle = styled.button`
   }
 `;
 
-interface IProjectPhotoWrapperProps {
+interface IActiveProps {
   isActive: boolean;
 }
 
-export const ProjectPhotoWrapper = styled.div<IProjectPhotoWrapperProps>`
+export const ProjectPhotoWrapper = styled.div<IActiveProps>`
   position: absolute;
   width: 100%;
   opacity: ${({ isActive }) => (isActive ? "1" : "0")};
@@ -102,4 +113,30 @@ export const PhotoWrapper = styled.div`
   width: 60%;
   position: relative;
   height: 330px;
+  @media (max-width: 960px) {
+    width: 100%;
+  }
 `;
+
+export const MobileProjects = styled.div`
+  display: flex;
+  button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 10px 15px;
+  }
+  button[data-name="true"] {
+    text-decoration: underline;
+  }
+`;
+
+export const MobileProjectDescription = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 5px 0 0 15px;
+  a{
+    margin: 15px 0;
+  }
+`

@@ -8,7 +8,6 @@ import {
   ProjectPhotoWrapper,
   PhotoWrapper,
 } from "./projects.style";
-import { JsxElement } from "typescript";
 
 interface IProjectsPhotoProps {
   id: number;
