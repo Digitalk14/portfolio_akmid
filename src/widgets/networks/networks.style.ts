@@ -26,6 +26,10 @@ export const Content = styled.div<IContentProps>`
   transform: ${({ isBottom }) =>
     isBottom ? "translateY(0)" : "translateY(-50%)"};
   transition: all 300ms ease-out;
+  @media (prefers-color-scheme: dark) {
+    filter: invert(100%) sepia(0%) saturate(2476%) hue-rotate(86deg)
+      brightness(118%) contrast(119%);
+  }
   a {
     margin: ${({ isBottom }) => (isBottom ? "0 15px 0 0" : "5px")};
   }

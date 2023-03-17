@@ -2,7 +2,6 @@ import { useState } from "react";
 import Head from "next/head";
 import { Main, Cover, Projects, Stack, Networks } from "~/widgets";
 import { TextWrapper } from "~/shared";
-import { useMobileDetection } from "~/features";
 
 export default function Home() {
   return (

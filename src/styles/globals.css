@@ -89,7 +89,6 @@ button {
 }
 h1 {
   font-size: 64px;
- 
 }
 h2 {
   font-weight: 800;
@@ -103,7 +102,7 @@ a {
 a {
   color: #5fd3c5;
 }
-p{
+p {
   line-height: 24px;
 }
 h3 {
@@ -130,5 +129,15 @@ a {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+  body {
+    background: black;
+  }
+  p,
+  h1,
+  h2,
+  h3,
+  button {
+    color: white;
   }
 }

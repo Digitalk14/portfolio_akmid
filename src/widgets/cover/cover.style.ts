@@ -62,6 +62,24 @@ export const TextWrapper = styled.div`
       font-size: 20px;
     }
   }
+  @media (prefers-color-scheme: dark) {
+    background: linear-gradient(
+      90deg,
+      #00000000 0,
+      #353333 30%,
+      #222020 51%,
+      #000000
+    );
+    @media (max-width: 960px) {
+      background: linear-gradient(
+        180deg,
+        #ffffff00 0,
+        #454444c4 20%,
+        #353535 51%,
+        #000000
+      );
+    }
+  }
 `;
 
 export const H1 = styled.h1`

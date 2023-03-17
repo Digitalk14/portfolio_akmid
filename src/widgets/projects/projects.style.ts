@@ -51,6 +51,15 @@ export const TextWrapper = styled.div`
     height: 50px;
     overflow: hidden;
   }
+  @media (prefers-color-scheme: dark) {
+    background: linear-gradient(
+      to bottom,
+      #ffffff00 0%,
+      #191919bd 20%,
+      #353232 51%,
+      #000000 100%
+    );
+  }
 `;
 
 export const Description = styled.p``;
@@ -136,7 +145,7 @@ export const MobileProjectDescription = styled.div`
   display: flex;
   flex-direction: column;
   padding: 5px 0 0 15px;
-  a{
+  a {
     margin: 15px 0;
   }
-`
+`;
