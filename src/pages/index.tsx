@@ -2,6 +2,7 @@ import { useState } from "react";
 import Head from "next/head";
 import { Main, Cover, Projects, Stack, Networks } from "~/widgets";
 import { TextWrapper } from "~/shared";
+import { HomeOffice } from "~/widgets/home-office";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         />
       </Head>
       <Main>
+        <HomeOffice />
         <Cover />
         <TextWrapper>
           {`Hi, I’m Dmitrii and I create web user interfaces for more than 4 years.\n

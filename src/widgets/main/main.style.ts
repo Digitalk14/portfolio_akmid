@@ -5,7 +5,6 @@ export const MainWrapper = styled.main`
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 960px;
     margin: 0 auto;
     box-sizing: border-box;
 `;
