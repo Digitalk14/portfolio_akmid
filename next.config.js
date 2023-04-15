@@ -12,12 +12,20 @@ if (isGithubActions) {
   basePath = `/${repo}`;
 }
 
-
-module.exports = withLinaria({
+module.exports =  withLinaria({
   reactStrictMode: true,
   images: {
     unoptimized: true,
   },
   assetPrefix: assetPrefix,
   basePath: basePath,
+  webpack(config, options) {
+    config.module.rules.push({
+      test: /\.(glb|gltf)$/,
+      use: {
+        loader: "file-loader",
+      },
+    });
+    return config;
+  },
 });

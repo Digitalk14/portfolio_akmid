@@ -5,7 +5,7 @@ export const Section = styled.section`
   align-items: center;
   width: 100%;
   justify-content: center;
-  background: #fab608;
+  background: black;
   height: 100vh;
 `;
 
@@ -15,4 +15,5 @@ export const Container = styled.div`
   justify-content: center;
   width: 100%;
   max-width: 480px;
+  height: 100vh;
 `;
