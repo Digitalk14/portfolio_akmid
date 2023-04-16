@@ -2,7 +2,7 @@ import { useState } from "react";
 import Head from "next/head";
 import { Main, Cover, Projects, Stack, Networks } from "~/widgets";
 import { TextWrapper } from "~/shared";
-import { HomeOffice } from "~/widgets/home-office";
+import { HomeOffice, Hobbies } from "~/widgets";
 
 export default function Home() {
   return (
@@ -20,6 +20,7 @@ export default function Home() {
         />
       </Head>
       <Main>
+        <Hobbies />
         <HomeOffice />
         <Cover />
         <TextWrapper>

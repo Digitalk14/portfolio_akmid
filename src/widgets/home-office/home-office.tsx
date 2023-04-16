@@ -1,6 +1,5 @@
 import React from "react";
-import { Container, Section } from "./home-office.style";
-import { HomeOfficeModel } from "~/shared";
+import { HomeOfficeModel, Container, Section } from "~/shared";
 
 export const HomeOffice = () => {
   return (

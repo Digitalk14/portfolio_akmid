@@ -6,37 +6,14 @@ import {
   Html,
   Plane,
   useHelper,
-  Effects as EffectsComposer
+  Effects as EffectsComposer,
 } from "@react-three/drei";
 import { Canvas, useLoader, extend, useThree } from "@react-three/fiber";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Object3D } from "three/src/core/Object3D"; //Object3D types
 import { useControls } from "leva";
 import { DirectionalLight, DirectionalLightHelper } from "three";
-import { UnrealBloomPass } from 'three-stdlib';
-
-extend({ UnrealBloomPass });
-
-export const Effects = () => {
-    const { size, scene, camera } = useThree();
-    const aspect = useMemo(() => new THREE.Vector2(size.width, size.height), [
-      size,
-    ]);
-  
-    return (
-      <EffectsComposer
-        multisamping={8}
-        renderIndex={1}
-        disableGamma
-        disableRenderPass
-      >
-        {/* @ts-ignore */}
-        <renderPass attachArray="passes" scene={scene} camera={camera} />
-        {/* @ts-ignore */}
-        <unrealBloomPass attachArray="passes" args={[aspect, 0.4, 1, 0]} />
-      </EffectsComposer>
-    );
-  };
+import { PostProcess } from "../post-process";
 
 const LightScene = () => {
   //   const { intensity, x, y, z, color } = useControls({
@@ -78,7 +55,7 @@ const LightScene = () => {
         shadow-normalBias={0.07}
       />
       <ambientLight intensity={0.15} color={"#e6fffe"} />
-      <Effects />
+      <PostProcess />
       {/* <Plane
         castShadow
         receiveShadow
@@ -117,7 +94,7 @@ export const HomeOfficeModel = () => {
   }, []);
   useEffect(() => {
     const handleMouseMove = (e: any) => {
-      const xPos = e.clientX / window.innerWidth / 10 * -1;
+      const xPos = (e.clientX / window.innerWidth / 10) * -1;
       const yPos = (1 - e.clientY / window.innerHeight) * 3;
       if (modelRef) {
         modelRef.current?.rotation.set(0, xPos, 0);
