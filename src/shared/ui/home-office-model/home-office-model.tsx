@@ -10,7 +10,8 @@ export const HomeOfficeModel = () => {
   const progress = useProgress();
   const [model, setModel] = useState<Object3D | null>(null);
   const modelRef = useRef<Object3D | null>(null);
-  useEffect(() => { //download model
+  useEffect(() => {
+    //download model
     const loader = new GLTFLoader();
     loader.load("/assets/gltf-models/platform2.glb", async (gltf) => {
       gltf.scene.traverse((child) => {
@@ -29,7 +30,8 @@ export const HomeOfficeModel = () => {
       setModel(modelObj);
     });
   }, []);
-  useEffect(() => { //check mouse move
+  useEffect(() => {
+    //check mouse move
     const handleMouseMove = (e: any) => {
       const xPos = (e.clientX / window.innerWidth / 10) * -1;
       if (modelRef) {
@@ -54,7 +56,11 @@ export const HomeOfficeModel = () => {
       ) : (
         <Html>{`${progress} %`}</Html>
       )}
-      <Lights />
+      <Lights
+        ambientLightIntensityProps={0.15}
+        directionalLightIntensity={0.8}
+        directionalLightPostition={[-3.6, 1.3, 1.1]}
+      />
     </Canvas>
   );
 };
