@@ -1,19 +1,26 @@
 import { styled } from "@linaria/react";
 
-export const Section = styled.section`
+interface ISectionProps {
+  backgroundColor?: string;
+}
+
+export const Section = styled.section<ISectionProps>`
   display: flex;
   align-items: center;
   width: 100%;
   justify-content: center;
-  background: black;
+  background: ${({ backgroundColor }) => backgroundColor ?? "black"};
   height: 100vh;
 `;
 
-export const Container = styled.div`
+interface IContainer {
+  maxWidth?: string;
+}
+export const Container = styled.div<IContainer>`
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 100%;
-  max-width: 480px;
+  max-width: ${({ maxWidth }) => maxWidth ?? "480px"};
   height: 100vh;
 `;

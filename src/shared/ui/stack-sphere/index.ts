@@ -1,1 +1,1 @@
-export * from "./stack-sphere";
+export * from "./3d-text";
