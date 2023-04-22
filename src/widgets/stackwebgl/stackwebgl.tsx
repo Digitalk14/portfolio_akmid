@@ -1,9 +1,9 @@
-import { Container, Section, StackSphere } from "~/shared";
+import { Container, Section, StackSphere, Photoframe, Photo } from "~/shared";
 import { Canvas } from "@react-three/fiber";
 
 export const StackWebGL = () => {
   return (
-    <Section backgroundColor="#f2f2f2">
+    <Section backgroundColor="#e9e9e9">
       <Container maxWidth="100%">
         <Canvas
           shadows
@@ -15,6 +15,8 @@ export const StackWebGL = () => {
           }}
         >
             <StackSphere />
+            <Photoframe />
+            <Photo />
         </Canvas>
       </Container>
     </Section>

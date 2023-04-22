@@ -25,8 +25,8 @@ export const StackSphere = () => {
   };
   const { intensity, x, y, z } = useControls({
     intensity: { value: 2.5, min: 0, max: 5, step: 0.01 },
-    x: { value: -1.5, min: -15, max: 15 },
-    y: { value: 2, min: 0, max: 3 },
+    x: { value: 6.9, min: -15, max: 15 },
+    y: { value: 2.84, min: 0, max: 3 },
     z: { value: 3, min: -5, max: 5 },
   });
   const {
@@ -55,8 +55,6 @@ export const StackSphere = () => {
   useHelper(dirLightRef, DirectionalLightHelper, 1, "red");
   return (
     <Physics>
-      <Debug />
-
       <OrbitControls />
       <ambientLight intensity={0.6} />
       <directionalLight
@@ -72,13 +70,14 @@ export const StackSphere = () => {
       <Center>
         <RigidObject
           colliders="hull"
-          restitution={0.5}
+          restitution={0.3}
           size={0.36}
           height={0.2}
           bevelOffset={-0.02}
           position={{ x: 0, y: 1.3, z: 0 }}
           color='#026783'
           text='Frontend'
+          friction={0.7}
         />
         <RigidObject
           colliders="hull"
