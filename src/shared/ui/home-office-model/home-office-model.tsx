@@ -44,10 +44,7 @@ export const HomeOfficeModel = () => {
     };
   }, []);
   return (
-    <Canvas
-      shadows
-      camera={{ fov: 35, near: 1, far: 100, position: [6, 6, 10] }}
-    >
+    <>
       <camera />
       {model ? (
         <group dispose={null}>
@@ -56,11 +53,11 @@ export const HomeOfficeModel = () => {
       ) : (
         <Html>{`${progress} %`}</Html>
       )}
-      <Lights
+      {/* <Lights
         ambientLightIntensityProps={0.15}
         directionalLightIntensity={0.8}
         directionalLightPostition={[-3.6, 1.3, 1.1]}
-      />
-    </Canvas>
+      /> */}
+    </>
   );
 };

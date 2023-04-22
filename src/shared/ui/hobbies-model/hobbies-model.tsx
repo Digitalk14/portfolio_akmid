@@ -31,13 +31,9 @@ export const HobbiesModel = () => {
       setModel(modelObj);
     });
   }, []);
- 
+
   return (
-    <Canvas
-      shadows
-      camera={{ fov: 35, near: 1, far: 100, position: [6, 8, 10] }}
-    >
-      <camera />
+    <>
       {model ? (
         <group dispose={null}>
           <primitive ref={modelRef} castShadow object={model} dispose={null} />
@@ -46,11 +42,11 @@ export const HobbiesModel = () => {
         <Html>{`${progress} %`}</Html>
       )}
       <PlaneGrass />
-      <Lights
+      {/* <Lights
         ambientLightIntensityProps={0.56}
         directionalLightIntensity={1.48}
         directionalLightPostition={[-1.2, 2.4, 0.62]}
-      />
-    </Canvas>
+      /> */}
+    </>
   );
 };

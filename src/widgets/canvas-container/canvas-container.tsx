@@ -1,7 +1,11 @@
-import { Container, Section, StackSphere, Photoframe, Photo } from "~/shared";
+import { Container, Section } from "~/shared";
 import { Canvas } from "@react-three/fiber";
 
-export const StackWebGL = () => {
+interface ICanvasContainerProps {
+  children: React.ReactNode;
+}
+
+export const CanvasContainer: React.FC<ICanvasContainerProps> = ({ children }) => {
   return (
     <Section backgroundColor="#e9e9e9">
       <Container maxWidth="100%">
@@ -14,9 +18,7 @@ export const StackWebGL = () => {
             position: [3, 2, 10],
           }}
         >
-            <StackSphere />
-            <Photoframe />
-            <Photo />
+          {children}
         </Canvas>
       </Container>
     </Section>

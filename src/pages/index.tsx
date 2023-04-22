@@ -2,7 +2,7 @@ import { useState } from "react";
 import Head from "next/head";
 import { Main, Cover, Projects, Stack, Networks } from "~/widgets";
 import { TextWrapper } from "~/shared";
-import { HomeOffice, Hobbies, StackWebGL } from "~/widgets";
+import { HomeOffice, Hobbies, CanvasContainer, FirstScreen } from "~/widgets";
 
 export default function Home() {
   return (
@@ -20,18 +20,21 @@ export default function Home() {
         />
       </Head>
       <Main>
-        <StackWebGL />
-        <Hobbies />
-        <HomeOffice />
+        <CanvasContainer>
+          <FirstScreen />
+          <Hobbies />
+          <HomeOffice />
+        </CanvasContainer>
+
         <Cover />
-        <TextWrapper>
+        {/* <TextWrapper>
           {`Hi, I’m Dmitrii and I create web user interfaces for more than 4 years.\n
 I enjoy my job and infinitely improve my skills.\n
 Actually, that’s why I chose this profession, cause there are lot of things to learn about`}
         </TextWrapper>
         <Projects />
         <Stack />
-        <Networks />
+        <Networks /> */}
       </Main>
     </>
   );
