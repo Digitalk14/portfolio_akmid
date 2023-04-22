@@ -22,11 +22,11 @@ export default function Home() {
       <Main>
         <CanvasContainer>
           <FirstScreen />
-          <Hobbies />
           <HomeOffice />
+          <Hobbies />
         </CanvasContainer>
 
-        <Cover />
+        {/* <Cover /> */}
         {/* <TextWrapper>
           {`Hi, I’m Dmitrii and I create web user interfaces for more than 4 years.\n
 I enjoy my job and infinitely improve my skills.\n

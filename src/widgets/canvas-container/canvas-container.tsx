@@ -1,7 +1,7 @@
 import { Container, Section } from "~/shared";
 import { Canvas } from "@react-three/fiber";
 import { Physics, RigidBody } from "@react-three/rapier";
-import { Plane, OrbitControls, useHelper } from "@react-three/drei";
+import { Plane, OrbitControls, useHelper, PerspectiveCamera } from "@react-three/drei";
 import { useControls } from "leva";
 import { useRef } from "react";
 import { DirectionalLight, DirectionalLightHelper } from "three";
@@ -13,25 +13,22 @@ interface ICanvasContainerProps {
 export const CanvasContainer: React.FC<ICanvasContainerProps> = ({
   children,
 }) => {
-  const { intensity, x, y, z } = useControls({
+  const { intensity, x, y, z, cameraX, cameraY, cameraZ, cameraNear } = useControls({
     intensity: { value: 2.5, min: 0, max: 5, step: 0.01 },
     x: { value: 6.9, min: -15, max: 15 },
     y: { value: 2.84, min: 0, max: 3 },
     z: { value: 3, min: -5, max: 5 },
+    cameraX: { value: 3, min: -20, max: 20 },
+    cameraY: { value: 2, min: -10, max: 10 },
+    cameraZ: { value:12, min: -20, max: 20 },
+    cameraNear: { value:0.1, min: 0, max: 10}
   });
   const dirLightRef = useRef<DirectionalLight>(null);
   return (
     <Section backgroundColor="#e9e9e9">
       <Container maxWidth="100%">
-        <Canvas
-          shadows
-          camera={{
-            fov: 45,
-            near: 0.1,
-            far: 200,
-            position: [3, 2, 10],
-          }}
-        >
+        <Canvas shadows>
+          <PerspectiveCamera fov={60} near={cameraNear} position={[cameraX,cameraY,cameraZ]} makeDefault/>
           <OrbitControls />
           <ambientLight intensity={0.6} />
           <directionalLight
