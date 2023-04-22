@@ -11,7 +11,7 @@ export const Photoframe = () => {
   const modelRef = useRef<Object3D | null>(null);
   const { xframe, yframe, zframe, rotate } = useControls({
     xframe: { value: -4.7, min: -5, max: 5, step: 0.05 },
-    yframe: { value: -1.21, min: -5, max: 5, step: 0.05 },
+    yframe: { value: -1.05, min: -5, max: 5, step: 0.05 },
     zframe: { value: 2.4, min: -5, max: 5, step: 0.05 },
     rotate: { value: 0, min: -5, max: 5 },
   });
@@ -45,5 +45,5 @@ export const Photoframe = () => {
       </group>
     );
   }
-  return <Html>{`${progress} %`}</Html>;
+  return null
 };

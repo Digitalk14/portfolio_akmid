@@ -48,8 +48,8 @@ export const PlaneGrass = () => {
       receiveShadow
       scale={3.8}
       rotation-x={-Math.PI / 2}
-      rotation-z={-0.3}
-      position-y={-0.5}
+      // rotation-z={-0.3}
+      position-y={-0.48}
       position-x={-0.5}
       position-z={-0.2}
     >

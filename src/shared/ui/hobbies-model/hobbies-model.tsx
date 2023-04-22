@@ -27,26 +27,34 @@ export const HobbiesModel = () => {
       });
       modelObj.scale.set(0.8, 0.8, 0.8);
       modelObj.position.set(0, -1, 0);
-      modelObj.rotateY(-0.3);
       setModel(modelObj);
     });
   }, []);
-
-  return (
-    <>
-      {model ? (
-        <group dispose={null}>
-          <primitive ref={modelRef} castShadow object={model} dispose={null} />
-        </group>
-      ) : (
-        <Html>{`${progress} %`}</Html>
-      )}
-      <PlaneGrass />
-      {/* <Lights
-        ambientLightIntensityProps={0.56}
-        directionalLightIntensity={1.48}
-        directionalLightPostition={[-1.2, 2.4, 0.62]}
-      /> */}
-    </>
-  );
+  if (model) {
+    return (
+      <>
+        <primitive ref={modelRef} castShadow object={model} dispose={null} />
+        <PlaneGrass />
+      </>
+    );
+  }
+  return null;
+  // return (
+  //   <>
+  //     {model ? (
+  //       <group dispose={null}>
+  //         <primitive ref={modelRef} castShadow object={model} dispose={null} />
+  //         <PlaneGrass />
+  //       </group>
+  //     ) : (
+  //       <Html>{`${progress} %`}</Html>
+  //     )}
+  //     <PlaneGrass />
+  //     {/* <Lights
+  //       ambientLightIntensityProps={0.56}
+  //       directionalLightIntensity={1.48}
+  //       directionalLightPostition={[-1.2, 2.4, 0.62]}
+  //     /> */}
+  //   </>
+  // );
 };

@@ -30,34 +30,39 @@ export const HomeOfficeModel = () => {
       setModel(modelObj);
     });
   }, []);
-  useEffect(() => {
-    //check mouse move
-    const handleMouseMove = (e: any) => {
-      const xPos = (e.clientX / window.innerWidth / 10) * -1;
-      if (modelRef) {
-        modelRef.current?.rotation.set(0, xPos, 0);
-      }
-    };
-    addEventListener("mousemove", handleMouseMove);
-    return () => {
-      removeEventListener("mousemove", handleMouseMove);
-    };
-  }, []);
-  return (
-    <>
-      <camera />
-      {model ? (
-        <group dispose={null}>
-          <primitive ref={modelRef} castShadow object={model} dispose={null} />
-        </group>
-      ) : (
-        <Html>{`${progress} %`}</Html>
-      )}
-      {/* <Lights
-        ambientLightIntensityProps={0.15}
-        directionalLightIntensity={0.8}
-        directionalLightPostition={[-3.6, 1.3, 1.1]}
-      /> */}
-    </>
-  );
+  // useEffect(() => {
+  //   //check mouse move
+  //   const handleMouseMove = (e: any) => {
+  //     const xPos = (e.clientX / window.innerWidth / 10) * -1;
+  //     if (modelRef) {
+  //       modelRef.current?.rotation.set(0, xPos, 0);
+  //     }
+  //   };
+  //   addEventListener("mousemove", handleMouseMove);
+  //   return () => {
+  //     removeEventListener("mousemove", handleMouseMove);
+  //   };
+  // }, []);
+  if(model){
+    return (
+      <primitive ref={modelRef} castShadow object={model} dispose={null} />
+    )
+  }
+  return null
+  // return (
+  //   <>
+  //     {model ? (
+  //       <group dispose={null}>
+  //         <primitive ref={modelRef} castShadow object={model} dispose={null} />
+  //       </group>
+  //     ) : (
+  //       <Html>{`${progress} %`}</Html>
+  //     )}
+  //     {/* <Lights
+  //       ambientLightIntensityProps={0.15}
+  //       directionalLightIntensity={0.8}
+  //       directionalLightPostition={[-3.6, 1.3, 1.1]}
+  //     /> */}
+  //   </>
+  // );
 };
