@@ -26,16 +26,6 @@ export default function Home() {
           <Hobbies />
           <TechStack />
         </CanvasContainer>
-
-        {/* <Cover /> */}
-        {/* <TextWrapper>
-          {`Hi, I’m Dmitrii and I create web user interfaces for more than 4 years.\n
-I enjoy my job and infinitely improve my skills.\n
-Actually, that’s why I chose this profession, cause there are lot of things to learn about`}
-        </TextWrapper>
-        <Projects />
-        <Stack />
-        <Networks /> */}
       </Main>
     </>
   );

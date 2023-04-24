@@ -1,5 +1,4 @@
 import React from "react";
-import { Vector3 } from "three";
 import { HomeOfficeModel, DescriptionBlock } from "~/shared";
 
 const description = `Lorem Ipsum\n Hello World`;
