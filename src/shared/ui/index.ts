@@ -5,3 +5,4 @@ export * from "./post-process";
 export * from "./styles";
 export * from "./stack-sphere";
 export * from "./description-block";
+export * from './perspective-camera'

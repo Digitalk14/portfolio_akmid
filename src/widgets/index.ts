@@ -7,3 +7,4 @@ export * from "./home-office";
 export * from "./hobbies";
 export * from "./canvas-container";
 export * from "./first-screen";
+export * from "./tech-stack";
