@@ -40,6 +40,7 @@ export const Photoframe = () => {
       <group
         position={[xframe, yframe, zframe]}
         dispose={null}
+        castShadow
       >
         <primitive ref={modelRef} castShadow object={model} dispose={null} />
       </group>

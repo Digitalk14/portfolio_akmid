@@ -47,21 +47,6 @@ export const StackSphere = () => {
           color="#2fa1d1"
           text="VASILEV"
         />
-        {/* <RigidBody type="fixed">
-          <Plane
-            receiveShadow
-            castShadow
-            rotation-x={-Math.PI / 2}
-            scale={30}
-            position-x={2.5}
-          >
-            <meshStandardMaterial
-              attach="material"
-              color={0xffffff}
-              transparent
-            />
-          </Plane>
-        </RigidBody> */}
       </Center>
     </>
   );

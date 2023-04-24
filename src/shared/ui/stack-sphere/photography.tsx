@@ -24,7 +24,7 @@ export const Photo = () => {
       scale={scalePhoto}
       position={[xPhoto, yPhoto, zPhoto]}
     >
-      <meshBasicMaterial
+      <meshStandardMaterial
         {...textures}
         attach="material"
         color={0xffffff}

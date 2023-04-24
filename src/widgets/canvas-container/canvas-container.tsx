@@ -13,11 +13,8 @@ interface ICanvasContainerProps {
 export const CanvasContainer: React.FC<ICanvasContainerProps> = ({
   children,
 }) => {
-  const { intensity, x, y, z } = useControls({
-    intensity: { value: 2.5, min: 0, max: 5, step: 0.01 },
-    x: { value: 6.9, min: -15, max: 15 },
-    y: { value: 2.84, min: 0, max: 3 },
-    z: { value: 3, min: -5, max: 5 },
+  const { ambientLight } = useControls({
+    ambientLight: { value: 0.05, min: 0, max: 5, step: 0.01 },
   });
   const dirLightRef = useRef<DirectionalLight>(null);
   const [rotationY, setRotation] = useState(0);
@@ -48,22 +45,16 @@ export const CanvasContainer: React.FC<ICanvasContainerProps> = ({
     };
   }, []);
   return (
-    <Section backgroundColor="#ededed">
+    <Section backgroundColor="#827c71">
       <Container maxWidth="100%">
         <Canvas shadows>
           <PerspectiveCamera />
-          <OrbitControls enableZoom={false} maxPolarAngle={Math.PI / 2} rotateSpeed={0.5}/>
-          <ambientLight intensity={0.6} />
-          <directionalLight
-            intensity={intensity}
-            position={[x, y, z]}
-            castShadow
-            shadow-mapSize-height={2048}
-            shadow-mapSize-width={2048}
-            color={"#ffffff"}
-            shadow-normalBias={0.07}
-            ref={dirLightRef}
+          <OrbitControls
+            // enableZoom={false}
+            maxPolarAngle={Math.PI / 2.2}
+            rotateSpeed={0.5}
           />
+          <ambientLight intensity={ambientLight} />
           <Physics>
             {children}
             <RigidBody type="fixed">

@@ -59,7 +59,7 @@ export const PlaneGrass = () => {
         transparent
         displacementScale={0}
         aoMapIntensity={0.7}
-        roughness={1}
+        roughness={0}
         metalness={0}
         metalnessMap={null}
         normalScale={new Vector2(1, 1)}

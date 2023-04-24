@@ -18,13 +18,14 @@ export const TechStack = () => {
           <Float key={name}>
             <Svg
               src={`${iconPath}${name}.svg`}
+              castShadow
               scale={i === activeIndex ? scale * 1.2 : scale}
               position={[position.x, position.y, i === activeIndex ? 1 : 0]}
             />
           </Float>
         );
       })}
-      <group position={[4, 0, 0]}>
+      <group position={[4, -0.5, 0]}>
         {ICONS.map(({ name, descriptionPosition }, i) => {
           return (
             <DescriptionBlock

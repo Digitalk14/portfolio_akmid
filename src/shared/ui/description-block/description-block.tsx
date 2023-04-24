@@ -26,6 +26,8 @@ export const DescriptionBlock: React.FC<IDescriptionBlockProps> = ({
         anchorY="middle"
         position={[position.x, position.y, position.z]}
         onPointerEnter={onPointerOver}
+        outlineWidth={0.015}
+        outlineColor="#ffffff"
       >
         {description}
       </Text>
