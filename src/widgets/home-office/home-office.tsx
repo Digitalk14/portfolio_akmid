@@ -19,7 +19,6 @@ export const HomeOffice = () => {
         shadow-mapSize-width={1024}
       />
       <rectAreaLight
-        castShadow
         position={[1.1, -0.9, -1.3]}
         color={"#ebddb2"}
         intensity={30}
