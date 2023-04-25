@@ -4,9 +4,7 @@ import { assetPrefix } from "~/shared";
 export const Photo = () => {
   const isGithubActions = process.env.GITHUB_ACTIONS || false;
   const textures = useTexture({
-    map: `${
-      isGithubActions ? "portfolio_akmid" : ""
-    }/assets/images/covers/my_photo.jpg`,
+    map: `portfolio_akmid/assets/images/covers/my_photo.jpg`,
   });
   return (
     <Plane
