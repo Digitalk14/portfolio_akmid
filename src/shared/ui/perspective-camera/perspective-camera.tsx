@@ -1,6 +1,5 @@
 import { PerspectiveCamera as DreiCamera } from "@react-three/drei";
-import { useControls } from "leva";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { CAMERA_POSITIONS } from "./camera-positions";
 
 export const PerspectiveCamera = () => {

@@ -1,10 +1,9 @@
 import { Container, Section, PerspectiveCamera } from "~/shared";
 import { Canvas } from "@react-three/fiber";
 import { Physics, RigidBody } from "@react-three/rapier";
-import { Plane, OrbitControls, useHelper } from "@react-three/drei";
-import { useControls } from "leva";
+import { Plane, OrbitControls } from "@react-three/drei";
 import { useEffect, useRef, useState } from "react";
-import { DirectionalLight, DirectionalLightHelper } from "three";
+import { DirectionalLight } from "three";
 
 interface ICanvasContainerProps {
   children: React.ReactNode;
@@ -13,9 +12,6 @@ interface ICanvasContainerProps {
 export const CanvasContainer: React.FC<ICanvasContainerProps> = ({
   children,
 }) => {
-  const { ambientLight } = useControls({
-    ambientLight: { value: 0.05, min: 0, max: 5, step: 0.01 },
-  });
   const dirLightRef = useRef<DirectionalLight>(null);
   const [rotationY, setRotation] = useState(0);
   useEffect(() => {
@@ -54,7 +50,7 @@ export const CanvasContainer: React.FC<ICanvasContainerProps> = ({
             maxPolarAngle={Math.PI / 2.2}
             rotateSpeed={0.5}
           />
-          <ambientLight intensity={ambientLight} />
+          <ambientLight intensity={0.05} />
           <Physics>
             {children}
             <RigidBody type="fixed">

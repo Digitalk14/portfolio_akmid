@@ -3,18 +3,11 @@ import { useEffect, useRef, useState } from "react";
 import { useProgress, Html } from "@react-three/drei";
 import { Object3D } from "three/src/core/Object3D";
 import * as THREE from "three";
-import { useControls } from "leva";
 
 export const Photoframe = () => {
   const [model, setModel] = useState<Object3D | null>(null);
   const progress = useProgress();
   const modelRef = useRef<Object3D | null>(null);
-  const { xframe, yframe, zframe, rotate } = useControls({
-    xframe: { value: -4.7, min: -5, max: 5, step: 0.05 },
-    yframe: { value: -1.05, min: -5, max: 5, step: 0.05 },
-    zframe: { value: 2.4, min: -5, max: 5, step: 0.05 },
-    rotate: { value: 0, min: -5, max: 5 },
-  });
   useEffect(() => {
     const loader = new GLTFLoader();
     loader.load("/assets/gltf-models/photoframe.glb", async (gltf) => {
@@ -38,7 +31,7 @@ export const Photoframe = () => {
   if (model) {
     return (
       <group
-        position={[xframe, yframe, zframe]}
+        position={[-4.7, -1.05, 2.4]}
         dispose={null}
         castShadow
       >

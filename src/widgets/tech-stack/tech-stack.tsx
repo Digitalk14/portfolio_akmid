@@ -29,6 +29,7 @@ export const TechStack = () => {
         {ICONS.map(({ name, descriptionPosition }, i) => {
           return (
             <DescriptionBlock
+              key={name}
               position={descriptionPosition}
               description={name}
               onPointerOver={() => handleHover(i)}
