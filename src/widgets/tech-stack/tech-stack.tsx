@@ -4,7 +4,7 @@ import { DescriptionBlock } from "~/shared";
 import { useState } from "react";
 import { assetPrefix } from "~/shared";
 
-const iconPath = `/assets/images/icons/svg-stack/`;
+const iconPath = `portfolio_akmid/assets/images/icons/svg-stack/`;
 const positionDescription = { x: 4, y: 0, z: 0 };
 
 export const TechStack = () => {

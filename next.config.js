@@ -17,7 +17,7 @@ module.exports =  withLinaria({
   images: {
     unoptimized: true,
   },
-  assetPrefix: assetPrefix,
+  // assetPrefix: assetPrefix,
   basePath: basePath,
   webpack(config, options) {
     config.module.rules.push({
