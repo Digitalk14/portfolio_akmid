@@ -18,7 +18,7 @@ export const TechStack = () => {
         return (
           <Float key={name}>
             <Svg
-              src={`${assetPrefix()}${iconPath}${name}.svg`}
+              src={`portfolio_akmid/assets/images/icons/svg-stack/${name}.svg`}
               castShadow
               scale={i === activeIndex ? scale * 1.2 : scale}
               position={[position.x, position.y, i === activeIndex ? 1 : 0]}
