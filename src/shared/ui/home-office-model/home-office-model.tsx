@@ -4,7 +4,7 @@ import { useProgress, Html } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { useEffect, useRef, useState } from "react";
 import { Object3D } from "three/src/core/Object3D"; //Object3D types
-import { Lights } from "../lights";
+import { assetPrefix } from "~/shared";
 
 export const HomeOfficeModel = () => {
   const progress = useProgress();
@@ -13,7 +13,7 @@ export const HomeOfficeModel = () => {
   useEffect(() => {
     //download model
     const loader = new GLTFLoader();
-    loader.load("/assets/gltf-models/platform2.glb", async (gltf) => {
+    loader.load(`${assetPrefix()}/assets/gltf-models/platform2.glb`, async (gltf) => {
       gltf.scene.traverse((child) => {
         if (child instanceof THREE.Mesh) {
           child.castShadow = true;

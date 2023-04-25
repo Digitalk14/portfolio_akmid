@@ -1,8 +1,9 @@
 import { Plane, useTexture } from "@react-three/drei";
+import { assetPrefix } from "~/shared";
 
 export const Photo = () => {
   const textures = useTexture({
-    map: "/assets/images/covers/my_photo.jpg",
+    map: `${assetPrefix()}/assets/images/covers/my_photo.jpg`,
   });
   return (
     <Plane

@@ -1,11 +1,10 @@
-import { Canvas } from "@react-three/fiber";
 import * as THREE from "three";
-import { useProgress, Html } from "@react-three/drei";
+import { useProgress } from "@react-three/drei";
 import { Object3D } from "three/src/core/Object3D";
 import { useEffect, useRef, useState } from "react";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
-import { Lights } from "../lights";
 import { PlaneGrass } from "./plane";
+import { assetPrefix } from "~/shared";
 
 export const HobbiesModel = () => {
   const progress = useProgress();
@@ -13,7 +12,7 @@ export const HobbiesModel = () => {
   const modelRef = useRef<Object3D | null>(null);
   useEffect(() => {
     const loader = new GLTFLoader();
-    loader.load("/assets/gltf-models/hobbies.glb", async (gltf) => {
+    loader.load(`${assetPrefix()}/assets/gltf-models/hobbies.glb`, async (gltf) => {
       gltf.scene.traverse((child) => {
         if (child instanceof THREE.Mesh) {
           child.castShadow = true;

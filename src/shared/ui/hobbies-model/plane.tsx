@@ -1,13 +1,14 @@
 import { Plane, useTexture } from "@react-three/drei";
 import { LinearEncoding, Vector2 } from "three";
+import { assetPrefix } from "~/shared";
 
 export const PlaneGrass = () => {
   const terrainTextures = useTexture({
-    map: "/assets/textures/grass/Grass001_1K_Color.jpg",
-    displacementMap: "/assets/textures/grass/Grass001_1K_Displacement.jpg",
-    aoMap: "/assets/textures/grass/Grass001_1K_AmbientOcclusion.jpg",
-    roughnessMap: "/assets/textures/grass/Grass001_1K_Roughness.jpg",
-    normalMap: "/assets/textures/grass/Grass001_1K_Normal.jpg",
+    map: `${assetPrefix()}/assets/textures/grass/Grass001_1K_Color.jpg`,
+    displacementMap: `${assetPrefix()}/assets/textures/grass/Grass001_1K_Displacement.jpg`,
+    aoMap: `${assetPrefix()}/assets/textures/grass/Grass001_1K_AmbientOcclusion.jpg`,
+    roughnessMap: `${assetPrefix()}/assets/textures/grass/Grass001_1K_Roughness.jpg`,
+    normalMap: `${assetPrefix()}/assets/textures/grass/Grass001_1K_Normal.jpg`,
   });
   return (
     <Plane

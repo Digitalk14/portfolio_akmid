@@ -1,9 +1,9 @@
 import { RigidBody, RigidBodyAutoCollider } from "@react-three/rapier";
 import * as THREE from "three";
 import { Text3D } from "@react-three/drei";
-import { Vector3 } from "three";
+import { assetPrefix } from "~/shared";
 
-const fontURL = "./assets/fonts/helvetiker_regular.typeface.json";
+const fontURL = `${assetPrefix()}/assets/fonts/helvetiker_regular.typeface.json`;
 const material = new THREE.MeshMatcapMaterial();
 
 interface IRigidObjectProps {
@@ -34,7 +34,11 @@ export const RigidObject: React.FC<IRigidObjectProps> = ({
   friction,
 }) => {
   return (
-    <RigidBody colliders={colliders ?? "cuboid"} restitution={restitution} friction={friction ?? 0}>
+    <RigidBody
+      colliders={colliders ?? "cuboid"}
+      restitution={restitution}
+      friction={friction ?? 0}
+    >
       <Text3D
         material={material}
         font={fontURL}

@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { useProgress, Html } from "@react-three/drei";
 import { Object3D } from "three/src/core/Object3D";
 import * as THREE from "three";
+import { assetPrefix } from "~/shared";
 
 export const Photoframe = () => {
   const [model, setModel] = useState<Object3D | null>(null);
@@ -10,7 +11,7 @@ export const Photoframe = () => {
   const modelRef = useRef<Object3D | null>(null);
   useEffect(() => {
     const loader = new GLTFLoader();
-    loader.load("/assets/gltf-models/photoframe.glb", async (gltf) => {
+    loader.load(`${assetPrefix()}/assets/gltf-models/photoframe.glb`, async (gltf) => {
       gltf.scene.traverse((child) => {
         if (child instanceof THREE.Mesh) {
           child.castShadow = true;
