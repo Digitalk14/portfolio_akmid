@@ -5,5 +5,5 @@ export const assetPrefix = () => {
   if (isGithubActions && repo) {
     assetPrefix = `/${repo.replace(/.*?\//, "")}`;
   }
-  return assetPrefix
+  return 'portfolio_akmid'
 };
