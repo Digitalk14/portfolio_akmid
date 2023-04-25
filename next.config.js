@@ -9,7 +9,7 @@ if (isGithubActions) {
   const repo = process.env.GITHUB_REPOSITORY.replace(/.*?\//, "");
 
   assetPrefix = `/${repo}/`;
-  basePath = `/`;
+  basePath = `/${repo}`;
 }
 
 module.exports =  withLinaria({
@@ -17,7 +17,7 @@ module.exports =  withLinaria({
   images: {
     unoptimized: true,
   },
-  assetPrefix: 'portfolio_akmid',
+  assetPrefix: assetPrefix,
   basePath: basePath,
   webpack(config, options) {
     config.module.rules.push({
