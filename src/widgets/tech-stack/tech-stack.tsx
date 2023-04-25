@@ -4,7 +4,7 @@ import { DescriptionBlock } from "~/shared";
 import { useState } from "react";
 import { assetPrefix } from "~/shared";
 
-const iconPath = `${assetPrefix()}/assets/images/icons/svg-stack/`;
+const iconPath = `/assets/images/icons/svg-stack/`;
 const positionDescription = { x: 4, y: 0, z: 0 };
 
 export const TechStack = () => {
@@ -18,7 +18,7 @@ export const TechStack = () => {
         return (
           <Float key={name}>
             <Svg
-              src={`${iconPath}${name}.svg`}
+              src={`${assetPrefix()}${iconPath}${name}.svg`}
               castShadow
               scale={i === activeIndex ? scale * 1.2 : scale}
               position={[position.x, position.y, i === activeIndex ? 1 : 0]}
