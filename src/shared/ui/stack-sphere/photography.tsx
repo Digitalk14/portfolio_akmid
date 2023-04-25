@@ -3,7 +3,7 @@ import { assetPrefix } from "~/shared";
 
 export const Photo = () => {
   const textures = useTexture({
-    map: `${assetPrefix()}/assets/images/covers/my_photo.jpg`,
+    map: `portfolio_akmid/assets/images/covers/my_photo.jpg`,
   });
   return (
     <Plane
