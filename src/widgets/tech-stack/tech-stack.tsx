@@ -4,21 +4,19 @@ import { DescriptionBlock } from "~/shared";
 import { useState } from "react";
 import { assetPrefix } from "~/shared";
 
-const iconPath = `portfolio_akmid/assets/images/icons/svg-stack/`;
-const positionDescription = { x: 4, y: 0, z: 0 };
-
 export const TechStack = () => {
   const [activeIndex, setActiveIndex] = useState<null | number>(null);
   const handleHover = (i: number) => {
     setActiveIndex(i);
   };
+  const path = `${assetPrefix()}/assets/images/icons/svg-stack/`
   return (
     <group position={[-5, 1.5, -5]} rotation-y={Math.PI / 0.67}>
       {ICONS.map(({ name, scale, position }, i) => {
         return (
           <Float key={name}>
             <Svg
-              src={`portfolio_akmid/assets/images/icons/svg-stack/${name}.svg`}
+              src={`${path}${name}.svg`}
               castShadow
               scale={i === activeIndex ? scale * 1.2 : scale}
               position={[position.x, position.y, i === activeIndex ? 1 : 0]}
