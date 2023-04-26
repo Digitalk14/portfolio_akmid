@@ -12,7 +12,7 @@ export const HobbiesModel = () => {
   const modelRef = useRef<Object3D | null>(null);
   useEffect(() => {
     const loader = new GLTFLoader();
-    loader.load(`${assetPrefix()}/assets/gltf-models/hobbies.glb`, async (gltf) => {
+    loader.load(`assets/gltf-models/hobbies.glb`, async (gltf) => {
       gltf.scene.traverse((child) => {
         if (child instanceof THREE.Mesh) {
           child.castShadow = true;

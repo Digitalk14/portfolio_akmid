@@ -13,7 +13,7 @@ export const HomeOfficeModel = () => {
   useEffect(() => {
     //download model
     const loader = new GLTFLoader();
-    loader.load(`${assetPrefix()}/assets/gltf-models/platform2.glb`, async (gltf) => {
+    loader.load(`assets/gltf-models/platform2.glb`, async (gltf) => {
       gltf.scene.traverse((child) => {
         if (child instanceof THREE.Mesh) {
           child.castShadow = true;
