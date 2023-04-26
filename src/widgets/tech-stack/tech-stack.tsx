@@ -9,7 +9,6 @@ export const TechStack = () => {
   const handleHover = (i: number) => {
     setActiveIndex(i);
   };
-  // const path = `${assetPrefix()}/assets/images/icons/svg-stack/`
   return (
     <group position={[-5, 1.5, -5]} rotation-y={Math.PI / 0.67}>
       {ICONS.map(({ name, scale, position }, i) => {
