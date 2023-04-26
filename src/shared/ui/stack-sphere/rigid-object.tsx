@@ -3,7 +3,7 @@ import * as THREE from "three";
 import { Text3D } from "@react-three/drei";
 import { assetPrefix } from "~/shared";
 
-const fontURL = `/assets/fonts/helvetiker_regular.typeface.json`;
+const fontURL = `assets/fonts/helvetiker_regular.typeface.json`;
 const material = new THREE.MeshMatcapMaterial();
 
 interface IRigidObjectProps {
