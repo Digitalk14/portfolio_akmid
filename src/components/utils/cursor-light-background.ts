@@ -7,11 +7,11 @@ export const cursorLightBackground = () => {
     const handleMouseMove = (e: MouseEvent) => {
       document.documentElement.style.setProperty(
         "--cursor-x",
-        `${e.clientX}px`
+        `${e.clientX + window.scrollX}px`
       );
       document.documentElement.style.setProperty(
         "--cursor-y",
-        `${e.clientY}px`
+        `${e.clientY + window.scrollY}px`
       );
     };
 
