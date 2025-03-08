@@ -25,7 +25,7 @@ export const Projects = ({
         Projects
       </p>
       {PROJECTS.map(({ title, description, img, link }) => {
-        const imagePath = `/projects/portfolio_akmid/${img}.jpg`;
+        const imagePath = `/portfolio_akmid/projects/${img}.jpg`;
         return (
           <a
             key={title}
