@@ -23,6 +23,7 @@ export const About = ({
       <div ref={ref} className="h-[5px]"></div>
       <p className="flex flex-col gap-4">
         <span>
+          {/*eslint-disable-next-line react/no-unescaped-entities*/}
           I'm a Front-End Engineer with six years of experience specializing in
           building scalable web infrastructures and optimizing website
           performance. Passionate about web technologies, I enjoy crafting fast,
@@ -46,6 +47,7 @@ export const About = ({
         <span>
           Beyond coding, I enjoy experimenting with new programming paradigms,
           refining developer workflows, and working on side projects like{" "}
+          {/*eslint-disable-next-line react/no-unescaped-entities*/}
           <b className="text-[#0d9272]">NumDoku</b>, a logic-based web game. I'm
           always eager to collaborate on innovative solutions that push the
           boundaries of front-end development.

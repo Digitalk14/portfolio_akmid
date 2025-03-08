@@ -10,11 +10,11 @@ import {
   Experience,
   Projects,
 } from "@/components/ui";
-import { cursorLightBackground } from "@/components/utils";
+import { useCursorLightBackground } from "@/components/utils";
 
 export default function Home() {
   const scrollState = useState(0);
-  cursorLightBackground();
+  useCursorLightBackground();
   return (
     <div
       className="font-mono min-h-screen bg-[#dfdfdf] text-[#454f6e] relative before:absolute 
@@ -36,6 +36,7 @@ export default function Home() {
                 Frontend Engineer
               </h2>
               <p className="max-w-xl text-lg">
+                {/*eslint-disable-next-line react/no-unescaped-entities*/}
                 I build exceptional digital experiences. Currently, I'm focused
                 on building accessible, human-centered products.
               </p>

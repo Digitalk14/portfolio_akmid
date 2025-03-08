@@ -7,7 +7,7 @@ export const Scrollable = ({
   children: React.ReactNode;
   scrollState: [number, (value: number) => void];
 }) => {
-  const [scrollIndex, setScrollIndex] = scrollState;
+  const [scrollIndex] = scrollState;
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

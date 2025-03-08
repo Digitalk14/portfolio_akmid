@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 
-export const cursorLightBackground = () => {
+export const useCursorLightBackground = () => {
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       document.documentElement.style.setProperty(
