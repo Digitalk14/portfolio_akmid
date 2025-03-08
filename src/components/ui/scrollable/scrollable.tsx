@@ -21,7 +21,7 @@ export const Scrollable = ({
   }, [scrollIndex]);
 
   return (
-    <div ref={containerRef} className="flex flex-col gap-[100px] pt-32">
+    <div ref={containerRef} className="flex flex-col gap-24 md:gap-[100px] pt-32">
       {children}
     </div>
   );

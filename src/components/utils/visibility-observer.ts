@@ -7,7 +7,6 @@ export const useVisibilityObserver = (ref: React.RefObject<HTMLElement | null>) 
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsVisible(entry.isIntersecting);
-        console.log(entry);
       },
       {
         rootMargin: "0px",
