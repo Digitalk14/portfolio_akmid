@@ -20,4 +20,10 @@ export const PROJECTS = [
     img: "numdoku_screenshot",
     link: "https://numdoku.vercel.app",
   },
+  {
+    title: "Good Commit",
+    description: "Good Commit is a tool that helps you generate good commit messages. It uses AI to generate commit messages based on the changes you made in your code.",
+    img: "good_commit_screenshot",
+    link: "https://good-commit.vercel.app",
+  },
 ];
