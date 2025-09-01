@@ -1,9 +1,17 @@
 export const EXPERIENCE = [
   {
+    company: "Electronic Arts (Vancouver)",
+    position: "Software Engineer",
+    startDate: "2025",
+    endDate: "Present",
+    description: `Contributed to the development of large-scale, high-traffic web applications for Electronic Arts. Focused on building responsive and performant user interfaces with modern technologies such as React and TypeScript. Worked on API integrations, UI optimizations, and implemented best practices for code quality, testing, and scalability`,
+    skills: ["ReactJS", "TypeScript", "Zustand", "Jest"],
+  },
+  {
     company: "Rove Concepts",
     position: "Front End Engineer",
     startDate: "2024",
-    endDate: "Present",
+    endDate: "2025",
     description: `Developed a pixel-streaming service with Arcware for low-latency rendering. Built dynamic React interfaces to enhance user engagement. Created internal showroom tools for improved management and customization. Utilized Three.js for high-quality 3D visualizations, delivering immersive experiences.`,
     skills: ["ReactJS", "Three.js", "TypeScript", "NodeJS"],
   },
